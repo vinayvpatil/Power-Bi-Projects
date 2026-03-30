@@ -1,157 +1,87 @@
+# 🍫 Awesome Chocolates – Power BI Analytics
 
-# 🚢 Awesome Chocolate - Shipment & Sales Analytics Dashboard
+[![Power BI](https://img.shields.io/badge/Power%20BI-Data%20Visualization-F2C811?logo=powerbi&logoColor=white)](https://powerbi.microsoft.com/) 
 
-#### 🔗 Live Dashboard
-Explore the interactive dashboard here:
-👉 [  View   ](https://app.powerbi.com/view?r=eyJrIjoiYzdlYTQ2MjYtZDM5OC00NGNjLWI4Y2YtNzY5ZWZkOTM1Nzk0IiwidCI6ImRjODhkNWNiLWMxMjEtNDUzYi1hMGRiLTFmMzlmYjEyMjJiMyJ9)
-***
-**Advanced Power BI Solution with Dynamic DAX Calculations**
+This repository contains the **raw dataset**, **DAX measures**, **ER diagram**, and **Power BI dashboard** used to analyze sales, shipments, and profitability across products, salespeople, and regions
 
-***
+---
 
-## About This Project
+## 📂 Project Files
 
-Working on the Awesome Chocolate shipment and sales dashboard gave me the opportunity to combine strong data modeling skills with business insight. The goal? To equip the supply chain and sales teams with clear, timely, and actionable intelligence that helps them optimize performance and increase profitability.
+Awesome Chocolates - Data_Raw.xlsx → Raw dataset
 
-With thoughtfully designed DAX measures and an intuitive data model, this dashboard makes complex logistics and financial data easy to understand, fast to analyze, and simple to act upon.
+Awesome_Chocolates.pbix → Power BI dashboard file
 
-***
+Dashboard_Preview.png → Preview image of the dashboard
 
-## Problem Statement
+DAX_measures.md → Documentation of DAX measures used
 
-Managing shipment logistics and sales performance in the chocolate industry involves complex variables such as fluctuating shipment volumes, varying costs, and tight profit margins. Without timely, accurate analytics, decision-makers risk inefficiencies and lost revenue.
+Data_Dictionary.md → Explanation of dataset fields
 
-***
+ER_Diagram.md → Entity-Relationship diagram
 
-## Objective
+README.md → Project overview (this file)
 
-- To provide a dynamic and scalable dashboard for monitoring shipments, sales, costs, and profits.
-- To enable month-over-month trend analysis for proactive management.
-- To incorporate intelligent profit targets and shipment segmentation for optimized operations.
-- To drive data-driven decisions to improve supply chain efficiency and business performance.
+---
 
-***
+## 📘 Dataset Overview
 
-## Dataset Description
+The dataset follows a **star schema** with one fact table and multiple dimension tables.
 
-- **Shipments Table:** Contains transactional data on shipments with fields such as Sales, Cost, Boxes, and shipment dates.
-- **Calendar Table:** Date dimension used for time intelligence calculations, includes year, month, and [Start of Month] fields.
+### Tables
+- **Shipments_Fact** → Sales transactions (sales, cost, boxes, shipments)
+- **Products_Dim** → Product details (category, cost per box)
+- **People_Dim** → Salespeople & teams
+- **Locations_Dim** → Geography & region
+- **Calendar_Dim** → Date hierarchy
 
-These tables are related by shipment date fields for context-aware analysis.
+👉 Full **data dictionary**: [Data Dictionary](Data_Dictionary.md)
+👉 ER Diagram: [ER Diagram](ER_Diagram.png)
 
-***
+---
 
-## Methodology
+## 📊 Dashboard Preview
 
-- Data is ingested into Power BI from source systems (shipping and sales databases).
-- A star-schema model relates shipments and calendar data.
-- Advanced DAX calculations create dynamic KPIs and comparisons, including month-over-month changes and profit margin indicators.
-- Metrics automatically update based on the latest calendar date, ensuring always-current reporting.
-- Visuals are designed for clarity, with conditional formatting highlighting performance against defined targets.
+![Dashboard Preview](Dashboard_Preview.png)
 
-***
+The dashboard provides:
+- **Core KPIs** → Sales, Shipments, Boxes, Cost, Profit, Profit %  
+- **MoM Analysis** → Growth/decline trends  
+- **Regional Insights** → Sales and profit by geography  
+- **Product Performance** → Contribution by category  
+- **Salesperson Analysis** → Revenue and profitability by team/person  
+- **Shipment Efficiency** → Low Box Shipments (LBS) %  
 
-## Dashboard Features
+👉 Full interactive dashboard: [Awesome_Chocolates.pbix](Awesome_Chocolates_Dashboard.pbix)
 
-- **Dynamic Monthly KPIs:** Total Shipments, Sales, Cost, Profit, and Boxes with automatic updates.
-- **Month-over-Month Change Indicators:** For Sales, Shipments, Boxes, and Cost with percentage change calculations.
-- **Profit Analysis:** Real-time profit percentage and intelligent Profit Target Indicator with color-coded status.
-- **Shipment Size Segmentation:** Insights on small shipments via LBS Count and LBS % metrics.
-- **Interactive Date Filtering:** Select specific date ranges or months for tailored analysis.
-- **Executive Summary Tiles:** High-level metrics with visual cues for quick consumption.
+---
 
-***
+## 📈 DAX Measures
 
-## Dashboard Images 
+Key calculations used in the dashboard include:
 
-![image alt](https://github.com/SatyaGanesh07/Awesome-Choco-Sales-Analytics-PowerBi/blob/543d525380b1b08c27671459073e7926945b4533/Dashboards/dashboard1.png)
-*High-level sales and overall performance summary*
+- **Core Metrics** → Total Sales, Shipments, Boxes, Profit, Profit %  
+- **Previous Month Metrics** → Enables MoM comparisons  
+- **MoM % Change** → Growth rates across KPIs  
+- **Latest Month Metrics** → Snapshot of current performance  
+- **Targets & Indicators** → Profitability benchmarks  
+- **Parameter Measure** → Dynamic measure selection for visuals  
 
-![image alt](https://github.com/SatyaGanesh07/Awesome-Choco-Sales-Analytics-PowerBi/blob/543d525380b1b08c27671459073e7926945b4533/Dashboards/dashboard2.png)
-#####
-![image alt](https://github.com/SatyaGanesh07/Awesome-Choco-Sales-Analytics-PowerBi/blob/543d525380b1b08c27671459073e7926945b4533/Dashboards/dashboard3.png)
-*Detailed insight into product-wise sales, profit, and shipment quality*
+👉 Full list with documentation: [DAX measures.md](DAX_measures_doc.md)
 
+---
 
+## 💡 Business Questions Answered
 
-***
+This analytics project helps answer:
 
-## Core DAX Measures
+1. What are the **total sales, profit, and shipments** this month vs. previous months?  
+2. How is the **Month-on-Month growth** across key metrics?  
+3. Which **products and categories** are driving sales and profitability?  
+4. Who are the **top-performing salespeople**?  
+5. What percentage of shipments are **low-volume (LBS < 50 boxes)**?  
+6. How do **regions compare** in terms of revenue and profit contribution?  
+7. Are we meeting the **profit margin target (60%)** consistently?  
+8. What are the **seasonal sales trends** across the timeline?  
 
-| Measure Name                    | Description                                                         |
-|---------------------------------|---------------------------------------------------------------------|
-| **Total Shipments**             | Total count of shipments for Awesome Chocolate                      |
-| **Total Sales**                 | Aggregate revenue from shipments                                    |
-| **Total Cost**                  | Sum of shipment costs                                              |
-| **Total Profit**                | Net profit: Total Sales minus Total Cost                            |
-| **Total Boxes**                 | Total number of boxes shipped                                       |
-| **LBS Count / LBS %**           | Number and percentage of shipments with fewer than 50 boxes        |
-| **MoM Shipments Change %**      | Percentage change in shipments month-over-month                     |
-| **MoM Sales Change %**          | Month-over-month sales growth percentage                            |
-| **MoM Boxes Change %**          | Month-over-month box count percentage change                        |
-| **MoM Cost Changes %**          | Month-over-month cost percentage change                             |
-| **Profit %**                    | Profit margin percentage                                            |
-| **Profit Target**               | Target profit margin (defaulted at 60%)                            |
-| **Profit Target Indicator**     | Flag indicating profit target status: Above, Near, or Below Target |
-
-***
-
-## Sample DAX Calculations
-
-```DAX
--- Total Shipments
-Total Shipments = COUNTROWS(shipments)
-
--- Total Sales (Latest Month)
-Total Sales Latest Month =
-VAR ld = [latest date]
-RETURN CALCULATE([Total Sales], 'calendar'[Start of Month] = ld)
-
--- Month-over-Month Sales Change %
-latest MoM Sales Change % =
-VAR ld = [latest date]
-VAR this_month_sales = [Total Sales Latest Month]
-VAR prev_month_sales = CALCULATE([Total Sales], 'calendar'[Start of Month] = EDATE(ld, -1))
-RETURN DIVIDE(this_month_sales - prev_month_sales, prev_month_sales)
-
-```
-
-***
-
-## Model Design Principles
-
-- **Star-Schema Modeling:**  
-  Structured relationships ensure accurate, flexible time intelligence calculations.
-
-- **Readability & Maintainability:**  
-  Meaningful measure names and comments make ongoing development and handoff seamless.
-
-- **Performance Optimization:**  
-  DAX best practices applied for efficient report refresh and user experience.
-
-***
-
-## Getting Started
-
-1. Connect your Awesome Chocolate shipment and calendar datasets.
-2. Verify date fields and refresh the model.
-3. Explore the dashboard to monitor shipments, sales, and profits with real-time calculations.
-
-***
-
-## Final Words
-
-This project reflects a combination of analytical rigor and business savvy. It demonstrates my ability to translate complex data into clear, high-value insights and to deliver tools that support real-world business success.
-
-I'm excited to bring these skills and this mindset into my next role — driving impactful data solutions that empower effective decision-making.
-
-***
-
-## Contact
-
-For any questions or suggestions, please open an issue or contact me via LinkedIn:  
-[Satya Ganesh LinkedIn](https://www.linkedin.com/in/satya-ganesh-5a89b2283/)
-
-
-**Delivering transformative analytics that ensure every chocolate shipment drives profitability and growth.**
-
+---
